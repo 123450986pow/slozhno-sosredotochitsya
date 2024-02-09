@@ -2,7 +2,7 @@
   background-attachment: fixed;
   background: var(--background-image) no-repeat top center,
     var(--background-color);
-  background-size: cover 768px;
+  background-size: cover;
   color: var(--main-text-color);
 }
 
@@ -15,6 +15,35 @@
   border-bottom: 1px solid var(--corners-color);
   left: 20px;
   bottom: 20px;
+}
+
+@media (width < 768px) and (width >= 375px) {
+  .decorated-zone::before {
+    left: 10px;
+    bottom: 17px;
+  }
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--corners-color);
+  border-top: 1px solid var(--corners-color);
+  right: 20px;
+  top: 20px;
+}
+
+@media (width < 768px) and (width >= 375px) {
+  .decorated-zone::after {
+    right: 10px;
+    top: 10px;
+  }
+}
+
+.title-decor {
+  background: var(--title-decor);
 }
 
 .header {
@@ -248,7 +277,7 @@
 
 .section__article-text-link {
   border: transparent;
-  text-shadow: 3px 3px 0px #ff8dcb;
+  text-shadow: 2px 2px 0px #ff8dcb;
   transition-duration: var(--transition-duration);
 }
 
